@@ -20,6 +20,16 @@
             <div><img src="images/hjh-logo_2.png" style="width: 15%;"></div>
             <div><h3 style="font-size: 20px; margin-top: 15px; font-weight: 200;">Let’s start the <span style="font-weight: 600; color: #2FA69A;">GPA</span></h3></div>
         </div>
+        <% if (locals.messages.errors) { %>
+          <% messages.errors.forEach( el => { %>
+              <div class="alert alert-danger card-panel red lighten-2"><%= el.msg %></div>
+          <% }) %>    
+      <% } %>
+      <% if (locals.messages.info) { %>
+          <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger card-panel red lighten-2"><%= el.msg %></div>
+          <% }) %>    
+      <% } %>
 
         <form action="/login" method="POST">
             <div class="row">
