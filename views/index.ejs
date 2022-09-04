@@ -12,33 +12,30 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
-    <title>index-frontEnd</title>
+    <title>Let's start the GPA</title>
 </head>
 <body>
     <div class="container">
-        <!-- <h1>Create Your VERY OWN Todolist!</h1> -->
-        <!-- <div class="row">
-            <div class="col s3"><div class="card-panel grey">3</div></div>
-            <div class="col s6"><div class="card-panel grey">6</div></div>
-        </div> -->
         <div class="center-align" id="logo-GPA" style="margin-top: 150px; margin-bottom: 70px;">
             <div><img src="images/hjh-logo_2.png" style="width: 15%;"></div>
             <div><h3 style="font-size: 20px; margin-top: 15px; font-weight: 200;">Let’s start the <span style="font-weight: 600; color: #2FA69A;">GPA</span></h3></div>
         </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
-              <label class="validate" for="email">Email</label>
-            </div>
+        <form action="/login" method="POST">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" name="email">
+                <label class="validate" for="email">Email</label>
+              </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
-              <label class="active" for="password">Password</label>
-            </div>
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" name="password">
+                <label class="active" for="password">Password</label>
+              </div>
           </div>
-        <a href="/login"><button class="btn btn-large waves-effect waves-light"> Login</button></a>
+          <input type="submit" class="btn btn-large waves-effect waves-light" value="Login">
+        </form> 
         <a href="/signup"><button class="btn btn-large waves-effect waves-teal btn-flat"> Signup</button></a>
       </div>
 
