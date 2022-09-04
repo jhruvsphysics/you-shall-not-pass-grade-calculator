@@ -9,7 +9,7 @@ const TermSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Grade: {
+  grade: {
     type: Number,
     required: true
   },

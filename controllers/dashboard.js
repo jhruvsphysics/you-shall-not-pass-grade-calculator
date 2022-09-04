@@ -11,8 +11,9 @@ module.exports = {
         }
     },
     createTerm: async (req, res)=>{
+        console.log(req.body)
         try{
-            await Term.create({termName: req.body.termName, completed: false, userId: req.user.id})
+            await Term.create({termName: req.body.termName, completed: false, userId: req.user.id, grade: 0})
             console.log('Term has been added!')
             res.redirect('/dashboard')
         }catch(err){

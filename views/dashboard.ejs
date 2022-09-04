@@ -16,7 +16,11 @@
                     <span class='del'> Delete </span>
                 </li>
         <% }) %>    
-        </ul>
+    </ul>
+    <form action="/dashboard/createTerm" method='POST'>
+        <input type="text" placeholder="Year 2 Term 1" name='termName'>
+        <input type="submit">
+    </form>
     <a href="/logout">logout</a>
     <script src="js/dashboard.js"></script>
 </body>
