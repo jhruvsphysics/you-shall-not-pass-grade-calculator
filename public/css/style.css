@@ -32,8 +32,10 @@ h1{
 h1{
     font-size: 65px;
     font-weight: bolder;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 8px;
+    height: 145px;
+    overflow: auto;
 }
 h3{
     font-size: 20px;
