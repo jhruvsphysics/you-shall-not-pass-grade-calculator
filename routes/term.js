@@ -5,7 +5,7 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/:id', ensureAuth, termController.getTerm)
 
-// router.post('/createTerm', ensureAuth, dashboardController.createTerm)
+router.post('/addCourse/:id', ensureAuth, termController.addCourse)
 // router.delete('/deleteTerm', ensureAuth, dashboardController.deleteTerm)
 // router.put('/markComplete', ensureAuth, dashboardController.markComplete)
 // router.put('/markIncomplete', ensureAuth, dashboardController.markIncomplete)

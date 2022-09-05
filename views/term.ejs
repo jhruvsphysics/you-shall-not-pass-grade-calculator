@@ -8,5 +8,19 @@
 <body>
     <h1><%= user.userName %></h1>
     <h2><%= termName %></h2>
+
+    <ul>
+        <% courses.forEach( el => { %>
+                <li class='courseItems' data-id='<%=el._id%>'>
+                    <span><%= el.courseName %></span>
+                    <span class='del'> Delete </span>
+                </li>
+        <% }) %>    
+    </ul>
+
+    <form action="/term/addCourse/<%=termId%>" method='POST'>
+        <input type="text" placeholder="e.g. Quantum Theory 2" name='courseName'>
+        <input type="submit">
+    </form>
 </body>
 </html>

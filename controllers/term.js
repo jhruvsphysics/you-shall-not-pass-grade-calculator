@@ -4,18 +4,31 @@ const Course = require('../models/Course')
 module.exports = {
     getTerm: async (req,res)=>{
         console.log(req.user.id)
-        // console.log(req.params.id)
         const termSelected = await Term.find({_id: req.params.id})
         const courseItems = await Course.find({termId: req.params.id})
-        console.log(termSelected[0].userId)
-        // console.log(termSelected[0].termName)
-        // console.log(courseItems)
-        // console.log(courseItems)
+
+        // Check if the user has access:
         if (termSelected[0].userId !== req.user.id) {
             return res.redirect('/')
         }
         try{
-            res.render('term.ejs', {termId: req.params.id, user: req.user, termName: termSelected[0].termName, courseItems: courseItems})
+            res.render('term.ejs', {termId: req.params.id, user: req.user, termName: termSelected[0].termName, courses: courseItems})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    addCourse: async (req,res)=>{
+        console.log(req.user.id)
+        const termSelected = await Term.find({_id: req.params.id})
+
+        // Check if the user has access:
+        if (termSelected[0].userId !== req.user.id) {
+            return res.redirect('/')
+        }
+        try{
+            await Course.create({courseName: req.body.courseName, percentCompleted: 0, grade: 0, userId: req.user.id, termId: req.params.id})
+            console.log('Course has been added!')
+            res.redirect(`/term/${req.params.id}`)
         }catch(err){
             console.log(err)
         }
