@@ -64,13 +64,17 @@
                     <a href="/logout">Logout</a>
                 </div>
 
+                
                 <div class="col s8 offset-s1">
-                    <% if (termSelected) {%>
-                        <h2>
-                            <%= termSelected.termName %>
-                        </h2>
+                    <div class="term-title">
+                        <% if (termSelected) {%>
+                            <h2>
+                                <%= termSelected.termName %>
+                            </h2>
                         <% } %>
+                    </div>
                     <div id="term-class-grade"">
+                        
                         <table class="term-table responsive-table highlight">
                             <thead>
                                 <tr>
@@ -80,22 +84,13 @@
                             </thead>
                     
                             <tbody class="term-table-info">
-
-
                                 <% if (courseItems) {%>
-                                    
-                                        <% courseItems.forEach(el => { %>
-                                        <tr>
-                                            <td>
-                                                <!-- <input type="text" name="className" placeholder="Interface design theory" class="term-table-input"> -->
-                                                <%= el.courseName %>
-                                            </td>
-                                            <td>
-                                                <!-- <input type="text" name="classGrade" placeholder="90%" class="term-table-input"> -->
-                                                <%= el.grade %>
-                                            </td>
-                                        </tr>
-                                        <% }) %>
+                                    <% courseItems.forEach(el => { %>
+                                    <tr>
+                                        <td><%= el.courseName %></td>
+                                        <td><%= el.grade %></td>
+                                    </tr>
+                                    <% }) %>
                                     
                                 <% } %>
                             </tbody>
@@ -105,9 +100,14 @@
                     
                     <% if (termSelected) {%>
                         <form action="term/addCourse/<%=termSelected._id%>" method="POST">
-                            <input type="text" name="courseName" placeholder="Interface design theory">
-                            <input type="text" name="grade" placeholder="90%">
-                            <input type="submit" value="submit"/>
+                            <div class="type-info">
+                                <input type="text" name="courseName" placeholder="write down your class name">
+                                <input type="text" name="grade" placeholder="ex. 80">
+                                <i class="material-icons center" id="info-add">
+                                    <input type="submit" value=""/>add
+                                </i>
+                            </div>
+                            <!-- <input type="submit" value="submit"/> -->
                         </form>
                     <% } %>
                 </div>
