@@ -1,9 +1,14 @@
 const deleteBtn = document.querySelectorAll('.del')
+const createBtn = document.querySelectorAll('.create')
 const termItem = document.querySelectorAll('span.not')
 const termComplete = document.querySelectorAll('span.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTerm)
+})
+
+Array.from(createBtn).forEach((el)=>{
+    el.addEventListener('click', createTerm)
 })
 
 Array.from(termItem).forEach((el)=>{
@@ -31,6 +36,11 @@ async function deleteTerm(){
     }catch(err){
         console.log(err)
     }
+}
+
+function createTerm(){
+    const termId = this.parentNode.dataset.id
+    window.open(`/term/${termId}`, '_self')
 }
 
 async function markComplete(){
