@@ -73,7 +73,8 @@
                         <% if (courseItems) {%>
                             <ul>
                                 <% courseItems.forEach(el => { %>
-                                    <li><%= el.courseName %></li>
+                                    <li>course name: <%= el.courseName %></li>
+                                    <li>grade: <%= el.grade %></li>
                                 <% }) %>
                             </ul>
                         <% } %>
