@@ -73,6 +73,12 @@ img{
 .container{
     width: 95%;
 }
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex: auto;
+}
 
 /* table */
 td{
