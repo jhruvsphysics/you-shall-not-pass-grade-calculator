@@ -26,20 +26,22 @@
                         <h3>Dashboard</h3>
                     </div>
 
-                    <ul>
-                        <% terms.forEach( el => { %>
-                                <li class='termItem' data-id='<%=el._id%>'>
-                                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
-                                    <span class='create'> 
-                                        <i class="material-icons">create</i>
-                                    </span>
-                                    <span class='del'> 
-                                        <i class="material-icons">delete</i>
-                                    </span>
-                                    
-                                </li>
-                        <% }) %>    
-                    </ul>
+                    <table>
+                        <tbody>
+                            <% terms.forEach( el => { %>
+                                    <td class='termItem' data-id='<%=el._id%>'>
+                                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
+                                        <span class='create'> 
+                                            <i class="material-icons">create</i>
+                                        </span>
+                                        <span class='del'> 
+                                            <i class="material-icons">delete</i>
+                                        </span>
+                                        
+                                    </td>
+                            <% }) %>   
+                        <tbody> 
+                    </table>
 
                     <form action="/dashboard/createTerm" method='POST'>
                         <div class="file-field input-field">
@@ -52,7 +54,7 @@
                         </div>
                     </form>
 
-                    <a href="/logout">logout</a>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
         </div>
