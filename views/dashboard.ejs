@@ -36,11 +36,13 @@
                                             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
                                             <!-- <span class="completed"><%= el.termName %></span> -->
                                             <div class="icon" data-id='<%=el._id%>'>
-                                                <span class='create'> 
-                                                    <i class="material-icons">create</i>
-                                                </span>
+                                                <form action="/term/<%=el._id%>">
+                                                    <span class='create'> 
+                                                        <button type="submit" class="material-icons">create</button>
+                                                    </span>
+                                                </form>
                                                 <span class="del">  
-                                                    <i class="material-icons">delete</i>
+                                                    <button class="material-icons">delete</button>
                                                 </span>
                                             </div>
                                             

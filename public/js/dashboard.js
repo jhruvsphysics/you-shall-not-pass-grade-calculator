@@ -15,6 +15,7 @@ Array.from(termComplete).forEach((el)=>{
 })
 
 async function deleteTerm(){
+    console.log('delete')
     const termId = this.parentNode.dataset.id
     try{
         const response = await fetch('dashboard/deleteTerm', {
