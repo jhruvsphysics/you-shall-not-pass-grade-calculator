@@ -61,8 +61,23 @@
                             </div>
                         </div>
                     </form>
-
                     <a href="/logout">Logout</a>
+
+                    <div class="mock up">
+                        <% if (termSelected) {%>
+                        <p>
+                            <%= termSelected.termName %>
+                        </p>
+                        <% } %>
+
+                        <% if (courseItems) {%>
+                            <ul>
+                                <% courseItems.forEach(el => { %>
+                                    <li><%= el.courseName %></li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,12 +4,19 @@ const Course = require('../models/Course')
 module.exports = {
     getDashboard: async (req,res)=>{
         console.log(req.user)
+        let termSelected = []
+        let courseItems = []
         if (req.query.termId) {
-            console.log(req.query.termId, "selected")
+            termSelected = await Term.find({_id: req.query.termId})
+            if (termSelected[0].userId !== req.user.id) {
+                return res.redirect('/')
+            }
+            courseItems = await Course.find({termId: req.query.termId})
+            console.log("courseItems", courseItems)
         }
         try{
             const termItems = await Term.find({userId:req.user.id})
-            res.render('dashboard.ejs', {terms: termItems, user: req.user, termSelected: {}, courseItems: {}})
+            res.render('dashboard.ejs', {terms: termItems, user: req.user, termSelected: termSelected[0], courseItems: courseItems})
         }catch(err){
             console.log(err)
         }
