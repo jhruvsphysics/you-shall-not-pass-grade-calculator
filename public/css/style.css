@@ -119,6 +119,24 @@ i > input{
     display: none;
 }
 
+#add-info{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#add-info > i{
+    color: #2FA69A;
+    background: white;
+    font-weight: bolder;
+}
+#add-info > i:hover,
+#add-info > i:active{
+    color: white;
+    background: #2FA69A;
+}
+
 /* lists */
 #list{
     color: #2FA69A;
@@ -127,9 +145,7 @@ i > input{
 
 
 /* Term Class Grade */
-.term-title{
-    /* background: black; */
-}
+
 h2{
     color: #2FA69A;
     font-size: 25px;
@@ -151,16 +167,5 @@ h2{
     color: #2FA69A;
     width: 48% !important;
 }
-#info-add{
-    color: #2FA69A;
-    font-weight: bolder;
-    padding: 7px;
-    margin-left: 5px;
-}
-#info-add:hover,
-#info-add:active{
-    color: #11887C;
-    cursor: pointer;
-    background: rgb(247, 247, 247);
-    border-radius: 50%;
-}
+
+
