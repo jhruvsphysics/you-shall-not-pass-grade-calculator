@@ -73,7 +73,7 @@ a{
 }
 a:hover,
 a:active{
-    background: rgb(247, 247, 247);
+    font-size: medium;
     color: #11887C;
 }
 
@@ -89,6 +89,9 @@ img{
     align-items: center;
     justify-content: end;
     flex: auto;
+}
+span{
+    cursor: pointer;
 }
 
 /* table */
