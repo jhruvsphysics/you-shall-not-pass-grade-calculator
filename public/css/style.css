@@ -23,7 +23,7 @@ h1{
 }
 .main-user{
     color: white;
-    height: 295px;
+    height: 280px;
     padding-top: 10px;
 }
 h1{
@@ -91,6 +91,9 @@ img{
 }
 
 /* table */
+table{
+    margin-top: 10px;
+}
 td{
     border-bottom: .7px solid rgb(179, 179, 179);
     display: flex;
@@ -115,4 +118,11 @@ i > input{
 #list{
     color: #2FA69A;
     margin-right: 10px;
+}
+
+
+/* Term Class Grad */
+#term-class-grade{
+    background: gray;
+    margin-top: 350px;
 }
