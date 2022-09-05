@@ -105,6 +105,11 @@ img{
     background-color: rgba(175, 175, 175, 0.1);
 }
 
+.term-table{
+    table-layout: fixed;
+    width: 100%;
+}
+
 /* button */
 #add-icon{
 
@@ -123,7 +128,13 @@ i > input{
 
 
 /* Term Class Grad */
+h2{
+    font-size: 25px;
+    margin-top: 0;
+}
+
 #term-class-grade{
     background: lightgray;
     margin-top: 350px;
+    padding: 0;
 }
