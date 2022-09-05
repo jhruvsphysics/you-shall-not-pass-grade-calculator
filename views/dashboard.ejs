@@ -18,6 +18,7 @@
 <body>
     <div class="main-header">
         <div class="container">
+            <div class="center-align" "><img src="images/hjh-logo_2.png""></div>
             <div class="row">
                 <div class="col s3">
                     <div class="main-user right-align">
@@ -28,18 +29,22 @@
 
                     <table>
                         <tbody>
-                            <% terms.forEach( el => { %>
-                                    <td class='termItem' data-id='<%=el._id%>'>
-                                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
-                                        <span class='create'> 
-                                            <i class="material-icons">create</i>
-                                        </span>
-                                        <span class='del'> 
-                                            <i class="material-icons">delete</i>
-                                        </span>
-                                        
-                                    </td>
-                            <% }) %>   
+                            <tr>
+                                <% terms.forEach( el => { %>
+                                        <td class='termItem highlight' data-id='<%=el._id%>'>
+                                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
+                                            <div class="icon">
+                                                <span class='create'> 
+                                                    <i class="material-icons">create</i>
+                                                </span>
+                                                <span class='del'> 
+                                                    <i class="material-icons">delete</i>
+                                                </span>
+                                            </div>
+                                            
+                                        </td>
+                                <% }) %>   
+                            </tr>
                         <tbody> 
                     </table>
 
