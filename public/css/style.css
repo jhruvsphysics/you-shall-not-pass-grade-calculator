@@ -61,6 +61,10 @@ h5{
 
 a{
     color: #2FA69A;
+    display: block;
+    margin-top: 30px;
+    float: right;
+    font-weight: 600;
 }
 .not{
     text-decoration: none;
