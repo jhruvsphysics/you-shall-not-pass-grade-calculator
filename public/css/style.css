@@ -2,22 +2,22 @@ h1{
     color: #FFFFFF;
 }
 .completed{
-    text-decoration: line-through;
-    color: gray;
+    font-weight: bold;
+    color: #2FA69A;
+
 }
 .not{
     text-decoration: underline;
 }
 
-/* Dashboard-Delet Style */
-.del{
-
-}
-.del: :hover{
-
-}
-
 /* grid */
+.termItem{
+    display: flex;
+    align-items: center;
+}
+.create{
+    margin-left: 20px;
+}
 
 /* style */
 .main-header{
@@ -41,3 +41,20 @@ h3{
 h5{
     font-size: 18px;
 }
+.create{
+    color: #2FA69A;
+}
+.create:hover,
+.create:active{
+    cursor: pointer;
+    color: #11887C;
+}
+.del{
+    color: #9e9e9e;
+}
+.del:hover,
+.del:active{
+    cursor: pointer;
+    color: #da4c4c;
+}
+
