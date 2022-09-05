@@ -127,14 +127,19 @@ i > input{
 }
 
 
-/* Term Class Grad */
+/* Term Class Grade */
 h2{
+    color: #2FA69A;
     font-size: 25px;
     margin-top: 0;
 }
 
 #term-class-grade{
-    background: lightgray;
     margin-top: 350px;
     padding: 0;
+}
+.term-table-input{
+    border-bottom: none !important;
+    height: 30px !important;
+    margin-bottom: 5px !important;
 }
