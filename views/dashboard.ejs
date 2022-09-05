@@ -27,7 +27,7 @@
                         <h3>Dashboard</h3>
                     </div>
 
-                    <table>
+                    <table class="dashboard-term-table">
                         <tbody>
                             <tr>
                                 <% terms.forEach( el => { %>
@@ -79,6 +79,31 @@
                             </ul>
                         <% } %>
                     </div>
+                </div>
+
+                <div class="col s8 offset-s1" id="term-class-grade">
+                    <h2>Term title</h2>
+
+                    <table class="term-table responsive-table highlight">
+                        <thead>
+                            <tr>
+                                <th>class</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="className" placeholder="Interface design theory" class="term-table-input"></td>
+                                <td><input type="text" name="classGrade" placeholder="90%" class="term-table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="className" placeholder="Interface design theory" class="term-table-input"></td>
+                                <td><input type="text" name="classGrade" placeholder="90%" class="term-table-input"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
                 </div>
             </div>
         </div>

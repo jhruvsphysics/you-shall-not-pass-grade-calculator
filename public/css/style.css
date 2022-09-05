@@ -19,11 +19,12 @@ h1{
 /* style */
 .main-header{
     background-color: #2FA69A;
+    box-shadow: 0 3px 5px lightgray;
     height: 355px;
 }
 .main-user{
     color: white;
-    height: 295px;
+    height: 280px;
     padding-top: 10px;
 }
 h1{
@@ -34,6 +35,10 @@ h1{
     height: 145px;
     overflow: auto;
 }
+::-webkit-scrollbar{
+    display: none;
+}
+
 h3{
     font-size: 20px;
     margin-top: 0;
@@ -87,14 +92,22 @@ img{
 }
 
 /* table */
-td{
+.dashboard-term-table{
+    margin-top: 10px;
+}
+.dashboard-term-table td{
     border-bottom: .7px solid rgb(179, 179, 179);
     display: flex;
     justify-content: space-between;
 }
-td:hover,
-td:active{
-    background-color: rgb(241, 241, 241);
+.dashboard-term-table td:hover,
+.dashboard-term-table td:active{
+    background-color: rgba(175, 175, 175, 0.1);
+}
+
+.term-table{
+    table-layout: fixed;
+    width: 100%;
 }
 
 /* button */
@@ -111,4 +124,22 @@ i > input{
 #list{
     color: #2FA69A;
     margin-right: 10px;
+}
+
+
+/* Term Class Grade */
+h2{
+    color: #2FA69A;
+    font-size: 25px;
+    margin-top: 0;
+}
+
+#term-class-grade{
+    margin-top: 350px;
+    padding: 0;
+}
+.term-table-input{
+    border-bottom: none !important;
+    height: 30px !important;
+    margin-bottom: 5px !important;
 }
