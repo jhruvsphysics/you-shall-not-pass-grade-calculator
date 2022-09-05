@@ -5,16 +5,20 @@ const CourseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  userId: {
+  termId: {
     type: String,
     required: true,
   },
-  currentGrade: {
+  grade: {
     type: Number,
     required: true
   },
-  completed: {
-    type: Boolean,
+  percentCompleted: {
+    type: Number,
+    required: true
+  },
+  userId: {
+    type: String,
     required: true
   }
 })
