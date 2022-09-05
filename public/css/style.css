@@ -123,7 +123,7 @@ i > input{
 /* lists */
 #list{
     color: #2FA69A;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 
@@ -131,15 +131,18 @@ i > input{
 h2{
     color: #2FA69A;
     font-size: 25px;
-    margin-top: 0;
+    margin-top: 325px;
+    margin-bottom: 0;
 }
 
 #term-class-grade{
-    margin-top: 350px;
+    margin-top: 20px;
     padding: 0;
 }
+
 .term-table-input{
     border-bottom: none !important;
     height: 30px !important;
     margin-bottom: 5px !important;
 }
+
