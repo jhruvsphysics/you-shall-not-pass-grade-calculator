@@ -26,9 +26,9 @@ module.exports = {
             return res.redirect('/')
         }
         try{
-            await Course.create({courseName: req.body.courseName, percentCompleted: 0, grade: 0, userId: req.user.id, termId: req.params.id})
+            await Course.create({courseName: req.body.courseName, percentCompleted: 0, grade: req.body.grade, userId: req.user.id, termId: req.params.id})
             console.log('Course has been added!')
-            res.redirect(`/term/${req.params.id}`)
+            res.redirect(`/dashboard?termId=${req.params.id}`)
         }catch(err){
             console.log(err)
         }
