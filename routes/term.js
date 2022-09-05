@@ -3,7 +3,7 @@ const router = express.Router()
 const termController = require('../controllers/term') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, termController.getTerm)
+router.get('/:id', ensureAuth, termController.getTerm)
 
 // router.post('/createTerm', ensureAuth, dashboardController.createTerm)
 // router.delete('/deleteTerm', ensureAuth, dashboardController.deleteTerm)
