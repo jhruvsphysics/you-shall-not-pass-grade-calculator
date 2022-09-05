@@ -19,6 +19,7 @@ h1{
 /* style */
 .main-header{
     background-color: #2FA69A;
+    box-shadow: 0 3px 5px lightgray;
     height: 355px;
 }
 .main-user{
@@ -91,17 +92,17 @@ img{
 }
 
 /* table */
-table{
+.dashboard-term-table{
     margin-top: 10px;
 }
-td{
+.dashboard-term-table td{
     border-bottom: .7px solid rgb(179, 179, 179);
     display: flex;
     justify-content: space-between;
 }
-td:hover,
-td:active{
-    background-color: rgb(243, 243, 243);
+.dashboard-term-table td:hover,
+.dashboard-term-table td:active{
+    background-color: rgba(175, 175, 175, 0.1);
 }
 
 /* button */
@@ -123,6 +124,6 @@ i > input{
 
 /* Term Class Grad */
 #term-class-grade{
-    background: gray;
+    background: lightgray;
     margin-top: 350px;
 }
