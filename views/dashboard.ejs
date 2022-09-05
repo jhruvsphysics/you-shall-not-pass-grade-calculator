@@ -4,24 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="indexstylesheet" href="public/css/index.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Dashboard <%= user.userName %></h1>
-    <ul>
-        <% terms.forEach( el => { %>
-                <li class='termItem' data-id='<%=el._id%>'>
-                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
-                    <span class='del'> Delete </span>
-                </li>
-        <% }) %>    
-    </ul>
-    <form action="/dashboard/createTerm" method='POST'>
-        <input type="text" placeholder="Year 2 Term 1" name='termName'>
-        <input type="submit">
-    </form>
-    <a href="/logout">logout</a>
+    <div class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col s3">
+                    <div class="main-user right-align">
+                        <h5>Welcome!</h5>
+                        <h1><%= user.userName %></h1>
+                        <h3>Dashboard</h3>
+                    </div>
+
+                    <ul>
+                        <% terms.forEach( el => { %>
+                                <li class='termItem' data-id='<%=el._id%>'>
+                                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
+                                    <span class='del'> 
+                                        <i class="material-icons">delete</i>
+                                    </span>
+                                </li>
+                        <% }) %>    
+                    </ul>
+
+                    <form action="/dashboard/createTerm" method='POST'>
+                        <div class="file-field input-field">
+                            <button class="btn-floating btn waves-effect waves-light" type="submit" name="action-dashboard-submit">
+                                <i class="material-icons left "><input type="submit" value="">add</i>
+                            </button>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Year 2 Term 1" name='termName'>
+                            </div>
+                        </div>
+                    </form>
+
+                    <a href="/logout">logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/dashboard.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
 </body>
 </html>
