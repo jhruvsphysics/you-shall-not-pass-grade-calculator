@@ -33,7 +33,7 @@ async function deleteTerm(){
 }
 
 async function markComplete(){
-    const termId = this.parentNode.dataset.id
+    const termId = this.parentNode.parentNode.dataset.id
     try{
         const response = await fetch('dashboard/markComplete', {
             method: 'put',
