@@ -1,5 +1,5 @@
 h1{
-    color: #2FA69A;
+    color: #FFFFFF;
 }
 .completed{
     text-decoration: line-through;
@@ -15,4 +15,29 @@ h1{
 }
 .del: :hover{
 
+}
+
+/* grid */
+
+/* style */
+.main-header{
+    background-color: #2FA69A;
+    height: 355px;
+}
+.main-user{
+    color: white;
+    height: 355px;
+    padding-top: 70px;
+}
+h1{
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+h3{
+    font-size: 20px;
+    margin-top: 0;
+}
+h5{
+    font-size: 18px;
 }
