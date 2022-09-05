@@ -2,12 +2,9 @@ h1{
     color: #FFFFFF;
 }
 .completed{
-    font-weight: bold;
-    color: #2FA69A;
+    font-weight: bold !important;
+    color: #2FA69A !important;
 
-}
-.not{
-    text-decoration: underline;
 }
 
 /* grid */
@@ -71,10 +68,6 @@ a:hover,
 a:active{
     background: rgb(247, 247, 247);
     color: #11887C;
-}
-
-.not{
-    text-decoration: none;
 }
 
 img{

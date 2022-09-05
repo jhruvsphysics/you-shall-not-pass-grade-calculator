@@ -31,8 +31,10 @@
                         <tbody>
                             <tr>
                                 <% terms.forEach( el => { %>
-                                        <td class='termItem highlight'>
-                                            <i id="list" class="material-icons">brightness_1</i><span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
+                                        <td class='termItem highlight' data-id='<%=el._id%>'>
+                                            <i id="list" class="material-icons">brightness_1</i>
+                                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
+                                            <!-- <span class="completed"><%= el.termName %></span> -->
                                             <div class="icon" data-id='<%=el._id%>'>
                                                 <span class='create'> 
                                                     <i class="material-icons">create</i>
