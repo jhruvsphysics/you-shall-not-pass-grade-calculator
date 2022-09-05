@@ -37,10 +37,9 @@ async function deleteTerm(){
         console.log(err)
     }
 }
-
 function createTerm(){
     const termId = this.parentNode.dataset.id
-    window.open(`/term/${termId}`, '_self')
+    window.open(`dashboard?termId=${termId}`, '_self')
 }
 
 async function markComplete(){
