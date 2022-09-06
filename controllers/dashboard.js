@@ -21,6 +21,21 @@ module.exports = {
             console.log(err)
         }
     },
+    getDashboardMobile: async (req,res)=>{
+        console.log(req.user)
+        try{
+            const termItems = await Term.find({userId:req.user.id})
+            const courseItems = await Course.find({userId:req.user.id})
+            const coursePerTerm = {}
+            termItems.forEach(term => {
+                coursePerTerm[term] = courseItems.filter(course => (course.termId === term._id))
+            })
+            console.log(coursePerTerm)
+            res.render('dashboard_mobile.ejs', {terms: termItems, courses: courseItems})
+        }catch(err){
+            console.log(err)
+        }
+    },
     getDashboardWithTermSelected: async (req, res) => {
         console.log(req.user)
         console.log('dashboard term selected')

@@ -4,6 +4,7 @@ const dashboardController = require('../controllers/dashboard')
 const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, dashboardController.getDashboard)
+router.get('/mobile', ensureAuth, dashboardController.getDashboardMobile)
 
 router.post('/createTerm', ensureAuth, dashboardController.createTerm)
 router.delete('/deleteTerm', ensureAuth, dashboardController.deleteTerm)
