@@ -26,12 +26,11 @@ module.exports = {
         try{
             const termItems = await Term.find({userId:req.user.id})
             const courseItems = await Course.find({userId:req.user.id})
-            const coursePerTerm = {}
+            const coursePerTerms = {}
             termItems.forEach(term => {
-                coursePerTerm[term] = courseItems.filter(course => (course.termId === term._id))
+                coursePerTerms[term._id] = courseItems.filter(course => (course.termId == term._id))
             })
-            console.log(coursePerTerm)
-            res.render('dashboard_mobile.ejs', {terms: termItems, courses: courseItems})
+            res.render('dashboard_mobile.ejs', {terms: termItems, user: req.user, courses: courseItems, coursePerTerms: coursePerTerms})
         }catch(err){
             console.log(err)
         }
@@ -87,6 +86,7 @@ module.exports = {
         console.log(req.body.termIdFromJSFile)
         try{
             await Term.findOneAndDelete({_id:req.body.termIdFromJSFile})
+            await Course.deleteMany(({termId:req.body.termIdFromJSFile}))
             console.log('Deleted Term')
             res.json('Deleted It')
         }catch(err){
