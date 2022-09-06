@@ -23,14 +23,40 @@ module.exports = {
     },
     getDashboardMobile: async (req,res)=>{
         console.log(req.user)
+        let termSelected = undefined
+        if (req.query.termId) {
+            termSelected = req.query.termId
+            console.log('termId', termSelected)
+        }
         try{
             const termItems = await Term.find({userId:req.user.id})
             const courseItems = await Course.find({userId:req.user.id})
             const coursePerTerms = {}
+            let totalAverage = 0
+            let numberOfTerms = 0
+            const averageGradePerTerm = {}
             termItems.forEach(term => {
                 coursePerTerms[term._id] = courseItems.filter(course => (course.termId == term._id))
+                let grade = coursePerTerms[term._id].reduce( (c1, c2) => c1 + c2.grade  , 0)
+                let averageGrade = grade/coursePerTerms[term._id].length
+                averageGradePerTerm[term._id] = averageGrade
+                totalAverage += (averageGrade? averageGrade : 0)
+                numberOfTerms += (averageGrade? 1 : 0)
+                // console.log('term', term.termName)
+                // console.log('average grade', averageGrade)
+                // console.log('total average', totalAverage)
+                // console.log('numberOfTerms', numberOfTerms)
             })
-            res.render('dashboard_mobile.ejs', {terms: termItems, user: req.user, courses: courseItems, coursePerTerms: coursePerTerms})
+            res.render('dashboard_mobile.ejs', {
+                terms: termItems, 
+                user: req.user, 
+                courses: courseItems, 
+                coursePerTerms: coursePerTerms, 
+                termId: termSelected,
+                totalAverage: totalAverage,
+                averageGradePerTerm: averageGradePerTerm,
+                numberOfTerms: numberOfTerms
+            })
         }catch(err){
             console.log(err)
         }

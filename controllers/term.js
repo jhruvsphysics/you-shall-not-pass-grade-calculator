@@ -28,7 +28,7 @@ module.exports = {
         try{
             await Course.create({courseName: req.body.courseName, percentCompleted: 0, grade: req.body.grade, userId: req.user.id, termId: req.params.id})
             console.log('Course has been added!')
-            res.redirect(`/dashboard?termId=${req.params.id}`)
+            res.redirect(`/dashboard/mobile?termId=${req.params.id}`)
             // res.redirect('back')
         }catch(err){
             console.log(err)
