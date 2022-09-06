@@ -32,7 +32,7 @@
                             <tr>
                                 <% terms.forEach( el => { %>
                                         <td class='termItem highlight' data-id='<%=el._id%>'>
-                                            <i id="list" class="material-icons">brightness_1</i>
+                                            <i id="list" class="material-icons "><%= el.completed === true? "checkout" : "brightness_1" %></i>
                                             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.termName %></span>
                                             <!-- <span class="completed"><%= el.termName %></span> -->
                                             <div class="icon" data-id='<%=el._id%>'>
@@ -64,52 +64,53 @@
                     <a href="/logout">Logout</a>
                 </div>
 
-                <div class="col s8 offset-s1" id="term-class-grade">
-                    <h2>Term title</h2>
-
-                    <table class="term-table responsive-table highlight">
-                        <thead>
-                            <tr>
-                                <th>class</th>
-                                <th>Grade</th>
-                            </tr>
-                        </thead>
-                
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="className" placeholder="Interface design theory" class="term-table-input"></td>
-                                <td><input type="text" name="classGrade" placeholder="90%" class="term-table-input"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="className" placeholder="Interface design theory" class="term-table-input"></td>
-                                <td><input type="text" name="classGrade" placeholder="90%" class="term-table-input"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="mock up">
-                        <% if (termSelected) {%>
-                        <p>
-                            <%= termSelected.termName %>
-                        </p>
-                        <% } %>
-
+                <% if (termSelected) {%>
+                    <div class="col s8 offset-s1">
+                        <div class="term-title">
+                            
+                                <h2>
+                                    <%= termSelected.termName %>
+                                </h2>
+                            
+                        </div>
                         <% if (courseItems) {%>
-                            <ul>
-                                <% courseItems.forEach(el => { %>
-                                    <li>course name: <%= el.courseName %></li>
-                                    <li>grade: <%= el.grade %></li>
-                                <% }) %>
-                            </ul>
+                        <div id="term-class-grade"">
+                            
+                            <table class="term-table responsive-table highlight">
+                                    <thead>
+                                        <tr>
+                                            <th>Class name</th>
+                                            <th>Grade (%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="term-table-info">
+                                        <% courseItems.forEach(el => { %>
+                                        <tr>
+                                            <td><%= el.courseName %></td>
+                                            <td><%= el.grade %></td>
+                                        </tr>
+                                        <% }) %>
+                                    </tbody>      
+                            </table>
+                        </div>
                         <% } %>
+
+                        
+                        
+                            <form action="term/addCourse/<%=termSelected._id%>" method="POST">
+                                <div class="type-info">
+                                    <input type="text" name="courseName" placeholder="write down your class name">
+                                    <input type="number" name="grade" placeholder="ex. 80">
+                                    <button id="add-info" class="btn-floating btn waves-effect waves-light" type="submit" name="action-dashboard-submit">
+                                        <i class="material-icons center">
+                                            <input type="submit" value=""/>add
+                                        </i>
+                                    </button>
+                                </div>
+                            </form>
+                    
                     </div>
-                    <% if (termSelected) {%>
-                        <form action="term/addCourse/<%=termSelected._id%>" method="POST">
-                            <input type="text" name="courseName" placeholder="Interface design theory">
-                            <input type="text" name="grade" placeholder="90%">
-                            <input type="submit" value="submit"/>
-                        </form>
-                    <% } %>
-                </div>
+                <% } %>
             </div>
         </div>
     </div>

@@ -73,7 +73,7 @@ a{
 }
 a:hover,
 a:active{
-    background: rgb(247, 247, 247);
+    font-size: medium;
     color: #11887C;
 }
 
@@ -89,6 +89,9 @@ img{
     align-items: center;
     justify-content: end;
     flex: auto;
+}
+span{
+    cursor: pointer;
 }
 
 /* table */
@@ -112,34 +115,60 @@ img{
 
 /* button */
 #add-icon{
-
     width: 40px;
     height: 40px;
 }
 i > input{
-    padding: 0;
+    display: none;
+}
+
+#add-info{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#add-info > i{
+    color: #2FA69A;
+    background: white;
+    font-weight: bolder;
+}
+#add-info > i:hover,
+#add-info > i:active{
+    color: white;
+    background: #2FA69A;
 }
 
 /* lists */
 #list{
     color: #2FA69A;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 
 /* Term Class Grade */
+
 h2{
     color: #2FA69A;
     font-size: 25px;
-    margin-top: 0;
+    margin-top: 325px;
+    margin-bottom: 0;
 }
 
 #term-class-grade{
-    margin-top: 350px;
+    margin-top: 20px;
     padding: 0;
 }
-.term-table-input{
-    border-bottom: none !important;
-    height: 30px !important;
-    margin-bottom: 5px !important;
+
+.type-info{
+    display: flex;
+    align-items: center;
+    flex: auto;
 }
+.type-info input{
+    color: #2FA69A;
+    width: 48% !important;
+}
+
+
