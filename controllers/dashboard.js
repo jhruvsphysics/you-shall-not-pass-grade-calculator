@@ -47,6 +47,7 @@ module.exports = {
                 // console.log('total average', totalAverage)
                 // console.log('numberOfTerms', numberOfTerms)
             })
+            const finalAverage = totalAverage/(numberOfTerms? numberOfTerms : 1)
             res.render('dashboard_mobile.ejs', {
                 terms: termItems, 
                 user: req.user, 
@@ -55,7 +56,8 @@ module.exports = {
                 termId: termSelected,
                 totalAverage: totalAverage,
                 averageGradePerTerm: averageGradePerTerm,
-                numberOfTerms: numberOfTerms
+                numberOfTerms: numberOfTerms,
+                finalAverage: finalAverage
             })
         }catch(err){
             console.log(err)
