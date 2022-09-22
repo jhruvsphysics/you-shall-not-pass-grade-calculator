@@ -36,6 +36,8 @@ Fork:
 
 - You should be able to use the app locally!
 
+<a href="https://github.com/jhruvsphysics/you-shall-not-pass-grade-calculator" target="_blank"><img src="https://github.com/jhruvsphysics/readme-assets/blob/main/projects/you_shall_not_pass.gif" alt="you-shall-not-pass-grade-calculator" height="100%" /></a>
+
 ## To update, simply run:
 
 ```git pull upstream main```
