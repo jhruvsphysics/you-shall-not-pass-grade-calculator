@@ -30,6 +30,9 @@ Fork:
 
 ---
 
+- Make sure that you're in the right branch:
+```mobile-responsive-v2```
+
 - Finally, run:
 
 ```npm start```
